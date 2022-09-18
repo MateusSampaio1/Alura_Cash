@@ -18,10 +18,12 @@ O script com todo o desenvolvimento descrito acima pode ser encontrado na pasta 
 ### Criação dos modelos de classificação.
 Após a formação e exportação do dataset, foram utilizadas algumas bibliotecas e ferramentas de ciência de dados para um tratamento mais refinado destes dados antes da parte de criação dos modelos. 
 
-De início foram realizados alguns processos de tratamento das linhas que estavam vazias, os registros que tinham linhas nulas na coluna target(Inadimplente) ou em colunas qualitativas foram removidos, os demais foram tratados por meio da substituição da média ou mediana.
+De início foram realizados alguns processos de tratamento das linhas que estavam vazias, os registros que tinham linhas nulas na coluna **target(Possib_inadimp)** ou em colunas qualitativas foram removidos, os demais foram tratados por meio da substituição da média ou mediana.
 
 Em seguida foram removidos os registros que estavam muito fora da realidade e se caracterizavam como Outlier, como por exemplo clientes que possuíam mais de 120 anos de idade ou de tempo de trabalho.
 
 Uma vez finalizado esses tratamentos, foram realizados o processo de encoding das variáveis qualitativas, verificado as correlações das variáveis presentes no dataset, normalização das features com o **Standard Scaler**,  e o balanceamento dos dados com o **SMOTE**.
 
-Posteriormente foram criados os modelos de classificação, neste projeto foram utilizados o **Dummy**, **Decision Tree**, **Random Forest** e o **Gradient Boosting**. Destes, o que apresentou o melhor desempenho, mesmo após otimização, foi o Random Forest. Apresentando uma **roc_auc_score média de 98,28%** e mostrando que o modelo criado é capaz de distinguir muito bem entre o cliente inadimplente e o não inadimplente.
+Posteriormente foram criados os modelos de classificação, neste projeto foram utilizados o **Dummy**, **Decision Tree**, **Random Forest** e o **Gradient Boosting**. Destes, o que apresentou o melhor desempenho, mesmo após otimização, foi o GradientBoosting. Apresentando uma **roc_auc_score média de pouco mais de 97%** e mostrando que o modelo criado é capaz de distinguir bem entre os possíveis clientes inadimplentes e o não inadimplentes. 
+
+O desenvolvimento desta etapa do projeto pode ser encontrada na pasta [Notebook](https://github.com/MateusSampaio1/Alura_Cash/tree/main/Notebook) com o nome de [AluraCash_ML](https://github.com/MateusSampaio1/Alura_Cash/blob/main/Notebook/AluraCash_ML.ipynb).
