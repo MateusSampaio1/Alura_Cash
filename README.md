@@ -1,3 +1,5 @@
+![68747470733a2f2f692e696d6775722e636f6d2f6f7861623375752e706e67](https://user-images.githubusercontent.com/107072611/193137825-545344ad-260c-4057-9e39-d7ab037a045c.png)
+
 # Alura_Cash - 2° Challenge de Dados Alura.
 
 ## Contextualização.
@@ -16,7 +18,7 @@ Na parte de modelagem, as tabelas foram unidas, após definição das chaves pri
 O script com todo o desenvolvimento descrito acima pode ser encontrado na pasta [SQL_Scripts](https://github.com/MateusSampaio1/Alura_Cash/tree/main/SQL_Scripts), vale ressaltar que o SGBD utilizado foi o **MySQL**. 
 
 ### Criação dos modelos de classificação.
-Após a formação e exportação do dataset, foram utilizadas algumas bibliotecas e ferramentas de ciência de dados para um tratamento mais refinado destes dados antes da parte de criação dos modelos. 
+Após a formação e exportação do dataset, foram utilizadas algumas bibliotecas e ferramentas de ciência de dados como **Pandas**, **Seaborn**, **Matplotlib**, **Numpy**, **Scikit Learn**  dentre outras, para um tratamento mais refinado destes dados antes da parte de criação dos modelos. 
 
 De início foram realizados alguns processos de tratamento das linhas que estavam vazias, os registros que tinham linhas nulas na coluna **target(Possib_inadimp)** ou em colunas qualitativas foram removidos, os demais foram tratados por meio da substituição da média ou mediana.
 
@@ -27,3 +29,14 @@ Uma vez finalizado esses tratamentos, foram realizados o processo de encoding da
 Posteriormente foram criados os modelos de classificação, neste projeto foram utilizados o **Dummy**, **Decision Tree**, **Random Forest** e o **Gradient Boosting**. Destes, o que apresentou o melhor desempenho, mesmo após otimização, foi o GradientBoosting. Apresentando uma **roc_auc_score média de pouco mais de 97%** e mostrando que o modelo criado é capaz de distinguir bem entre os possíveis clientes inadimplentes e o não inadimplentes. 
 
 O desenvolvimento desta etapa do projeto pode ser encontrada na pasta [Notebook](https://github.com/MateusSampaio1/Alura_Cash/tree/main/Notebook) com o nome de [AluraCash_ML](https://github.com/MateusSampaio1/Alura_Cash/blob/main/Notebook/AluraCash_ML.ipynb).
+
+### Criação da API e Dashboard.
+Na etapa seguinte deste projeto e logo depois da criação e validação do modelo de classificação, foi criada um API(Application Programming Interface) que nos permitirá realizar uma requisão para o nosso modelo diretamente do Power Bi.
+
+O primeiro passo foi a criação e disponibilização da API, foi necessário criar um [script](https://github.com/MateusSampaio1/Alura_Cash/blob/main/Notebook/api_challenge/main.py) em Python que nos permite receber as informações de um novo cliente, realizar os tratamentos necessários e rodar o modelo treinado para efetuar uma predição. Neste processo foram utilizados o FastAPI e o Uvicorn, um para criação da aplicação e o outro para rodá-la localmente, permitindo assim que as request e response sejam realizadas.
+
+Em seguida, bastou apenas realizar a "ligação" do Power Bi e desta aplicação através da **URL(Web)**. Vale ressaltar que para ser possível efetuar as novas consultas ao modelo, direto do dashboard, foram criados parâmetros que possibilitam inserir novos dados a URL e assim realizar as predições.
+
+Por fim, foram analizados alguns [dados](https://github.com/MateusSampaio1/Alura_Cash/blob/main/Dados/Dados_tratados.csv) presentes na base de dados já tratadas e criado um [Dashboard](https://github.com/MateusSampaio1/Alura_Cash/blob/main/Dashboard_AluraCash.pbix).
+
+
