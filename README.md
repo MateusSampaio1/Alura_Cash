@@ -37,6 +37,4 @@ O primeiro passo foi a criação e disponibilização da API, foi necessário cr
 
 Em seguida, bastou apenas realizar a "ligação" do Power Bi e desta aplicação através da **URL(Web)**. Vale ressaltar que para ser possível efetuar as novas consultas ao modelo, direto do dashboard, foram criados parâmetros que possibilitam inserir novos dados a URL e assim realizar as predições.
 
-Por fim, foram analizados alguns [dados](https://github.com/MateusSampaio1/Alura_Cash/blob/main/Dados/Dados_tratados.csv) presentes na base de dados já tratadas e criado um [Dashboard](https://github.com/MateusSampaio1/Alura_Cash/blob/main/Dashboard_AluraCash.pbix).
-
-
+Por fim, foram analizados alguns [dados](https://github.com/MateusSampaio1/Alura_Cash/blob/main/Dados/Dados_tratados.csv) já tratados, presentes na pasta de dados, e criado um [Dashboard](https://github.com/MateusSampaio1/Alura_Cash/blob/main/Dashboard_AluraCash.pbix).
